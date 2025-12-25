@@ -1,0 +1,64 @@
+/* ==================== RESET ==================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* html, body, */
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ==================== APP CONTAINER ==================== */
+
+.app-container {
+  flex: 1;
+  width: 100%;
+  padding: 40px 20px;
+}
+
+.app-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ==================== RESPONSIVE PADDING ==================== */
+
+/* Mobile (up to 480px) */
+@media (max-width: 480px) {
+  .app-container {
+    padding: 20px 12px;
+  }
+}
+
+/* Tablet (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .app-container {
+    padding: 30px 16px;
+  }
+}
+
+/* Desktop (769px and above) */
+@media (min-width: 769px) {
+  .app-container {
+    padding: 40px 24px;
+  }
+}
+
+/* NOTE: no prefers-color-scheme here; dark mode is controlled by ThemeContext */
