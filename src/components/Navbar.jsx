@@ -1,15 +1,15 @@
-import { useState, useContext } from 'react';
-import { useLocation, Link, useNavigate } from 'react-router-dom';
-import IconButton from '@mui/material/IconButton';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
-import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
-import PeopleIcon from '@mui/icons-material/People';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import LogoutIcon from '@mui/icons-material/Logout';
-import { ThemeContext } from '../context/ThemeContext';
-import './Navbar.css';
+import { useState, useContext } from "react";
+import { useLocation, Link, useNavigate } from "react-router-dom";
+import IconButton from "@mui/material/IconButton";
+import Brightness4Icon from "@mui/icons-material/Brightness4";
+import Brightness7Icon from "@mui/icons-material/Brightness7";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
+import PeopleIcon from "@mui/icons-material/People";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import LogoutIcon from "@mui/icons-material/Logout";
+import { ThemeContext } from "../context/ThemeContext";
+import "./Navbar.css";
 
 const Navbar = () => {
   const location = useLocation();
@@ -22,8 +22,8 @@ const Navbar = () => {
   const { isDarkMode, toggleTheme } = themeContext;
 
   const navLinks = [
-    { label: 'Home', path: '/' },
-    { label: 'Employee List', path: '/list' },
+    { label: "Home", path: "/" },
+    { label: "Employee List", path: "/list" },
   ];
 
   return (
@@ -43,12 +43,16 @@ const Navbar = () => {
             {mobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
           </button>
 
-          <div className={`navbar-links ${mobileMenuOpen ? 'mobile-open' : ''}`}>
+          <div
+            className={`navbar-links ${mobileMenuOpen ? "mobile-open" : ""}`}
+          >
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`navbar-link ${location.pathname === link.path ? 'active' : ''}`}
+                className={`navbar-link ${
+                  location.pathname === link.path ? "active" : ""
+                }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.label}
@@ -63,7 +67,7 @@ const Navbar = () => {
                 color="inherit"
                 className="theme-button"
                 aria-label="Toggle dark mode"
-                title={isDarkMode ? 'Light Mode' : 'Dark Mode'}
+                title={isDarkMode ? "Light Mode" : "Dark Mode"}
               >
                 {isDarkMode ? (
                   <Brightness7Icon className="theme-icon" />
@@ -118,11 +122,11 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* <div className="breadcrumb-container">
+      <div className="breadcrumb-container">
         <div className="breadcrumb-inner">
           <Breadcrumb />
         </div>
-      </div> */}
+      </div>
     </>
   );
 };
@@ -133,22 +137,26 @@ const Breadcrumb = () => {
 
   const getBreadcrumbs = () => {
     const path = location.pathname;
-    const breadcrumbs = [{ label: 'Home', path: '/' }];
+    const breadcrumbs = [{ label: "Home", path: "/" }];
 
-    if (path === '/' || path === '') return breadcrumbs;
+    if (path === "/" || path === "") return breadcrumbs;
 
-    if (path.includes('/list')) {
-      breadcrumbs.push({ label: 'Employee List', path: '/list' });
+    if (path.includes("/list")) {
+      breadcrumbs.push({ label: "Employee List", path: "/list" });
     }
 
-    if (path.includes('/create')) {
-      breadcrumbs.push({ label: 'Employee List', path: '/list' });
-      breadcrumbs.push({ label: 'Create Employee', path: '/create', isActive: true });
+    if (path.includes("/create")) {
+      breadcrumbs.push({ label: "Employee List", path: "/list" });
+      breadcrumbs.push({
+        label: "Create Employee",
+        path: "/create",
+        isActive: true,
+      });
     }
 
-    if (path.includes('/update')) {
-      breadcrumbs.push({ label: 'Employee List', path: '/list' });
-      breadcrumbs.push({ label: 'Update Employee', path, isActive: true });
+    if (path.includes("/update")) {
+      breadcrumbs.push({ label: "Employee List", path: "/list" });
+      breadcrumbs.push({ label: "Update Employee", path, isActive: true });
     }
 
     return breadcrumbs;
@@ -167,7 +175,12 @@ const Breadcrumb = () => {
             <button
               className="breadcrumb-link"
               onClick={() => navigate(crumb.path)}
-              style={{ cursor: 'pointer', border: 'none', background: 'none', padding: 0 }}
+              style={{
+                cursor: "pointer",
+                border: "none",
+                background: "none",
+                padding: 0,
+              }}
             >
               {crumb.label}
             </button>

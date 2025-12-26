@@ -6,7 +6,7 @@ import Home from './pages/Home';
 import EmployeeList from './pages/EmployeeList';
 import CreateEmployee from './pages/CreateEmployee';
 import UpdateEmployee from './pages/UpdateEmployee';
-
+import Footer from './components/Footer'
 function App() {
   return (
     <ThemeProviderWrapper>
@@ -19,9 +19,11 @@ function App() {
               <Route path="/list" element={<EmployeeList />} />
               <Route path="/create" element={<CreateEmployee />} />
               <Route path="/update/:id" element={<UpdateEmployee />} />
+             
             </Routes>
           </div>
         </div>
+        <Footer></Footer>
       </Router>
     </ThemeProviderWrapper>
   );
