@@ -1,6 +1,6 @@
 🚀 React + Vite Project
 
-
+![image](https://github.com/firozmdtabish04/Lyient-Project-EMS-/blob/b946b42c5af370427ff8dc8a21d91bbcaba05280/CRM-1.png)
 
 A modern, fast, and scalable web application built using React and Vite, focused on performance, clean UI, and maintainable code structure. This project demonstrates best practices in frontend development, component-based architecture, and modern tooling.
 
